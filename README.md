@@ -1,5 +1,5 @@
 # Repository for storage temperature humidity monitor
-
+ ![rpi tempretaure humidity monitor](docs/example.png)
 ## Installation:
 ```
 git clone https://github.com/kuchosauronad0/sht21pi.git
