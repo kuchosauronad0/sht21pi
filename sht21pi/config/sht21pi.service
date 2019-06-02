@@ -1,7 +1,7 @@
 [Unit]
 Description=Read i2c sensors and drive ws2811x visual indicator
 After=network.target
-Documentation=man:argospi2c(1)
+
 
 [Service]
 Type=simple
