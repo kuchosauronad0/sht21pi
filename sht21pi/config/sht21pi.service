@@ -1,0 +1,11 @@
+[Unit]
+Description=Read i2c sensors and drive ws2811x visual indicator
+After=network.target
+Documentation=man:argospi2c(1)
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/sudo /usr/bin/python2.7 -m sht21pi.core -c /etc/sht21pi/sht21pi.conf
+
+[Install]
+WantedBy=multi-user.target

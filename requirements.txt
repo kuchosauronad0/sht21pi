@@ -1,0 +1,6 @@
+sphinx
+nose
+daiquiri
+rpi_ws281x
+nclib
+configparser
