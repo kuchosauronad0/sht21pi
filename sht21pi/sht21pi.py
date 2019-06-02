@@ -118,7 +118,7 @@ class StorageHumidityMonitor(object):
         except KeyError as e:
             raise KeyError("Configuration is missing key {}".format(e))
         try:
-            if (influx._INFLUX_USER == 'invalid') and (self._INFLUX_ENABLED):
+            if (influx._INFLUX_USER == 'influxUsername') and (self._INFLUX_ENABLED):
                 sys.exit(1)
         except:
             raise Exception("Please configure the influx username and password before using this software.")
