@@ -1,5 +1,9 @@
 # Repository for storage temperature humidity monitor
  ![rpi tempretaure humidity monitor](docs/example.png)
+ 
+ This python module is meant to enable a raspberry pi to acquire data from up to 16 SHT21 sensors connected over i2c. 
+ It comes with a sytemd timer that runs every 10 seconds once started and the data can either be stored on disk or sent to an influxdb. 
+
 ## Installation:
 ```
 git clone https://github.com/kuchosauronad0/sht21pi.git
@@ -23,4 +27,6 @@ sudo i2cdetect -y 0
 sudo i2cdetect -y 1
 # run the unittest:
 python -m unittest sht21pi.core
+
+less /var/log/sht21pi/sht21-application.log
 ```
