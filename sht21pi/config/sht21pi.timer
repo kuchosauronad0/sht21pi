@@ -1,5 +1,5 @@
 [Unit]
-Description=Run argospi2c every 10 seconds
+Description=Run sht21pi every 10 seconds
 
 [Timer]
 OnUnitActiveSec=10s
