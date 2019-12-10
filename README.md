@@ -14,8 +14,8 @@ i2c-tools (sudo apt-get install i2c-tools)
 git clone https://github.com/kuchosauronad0/sht21pi.git
 cd sht21pi
 sudo python setup.py install
-OR (acts the same)
-sudo make install
+
+sudo make install # this creates directories and copies the systemd unit + timer
 ```
 
 
