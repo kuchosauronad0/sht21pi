@@ -10,9 +10,11 @@
 '''
 import logging
 
+
 def debugging():
     """Get some debug info"""
     return True
+
 
 def to_bool(s):
     if s.upper() == 'TRUE':
@@ -20,7 +22,8 @@ def to_bool(s):
     else:
         return False
 
-def write_log(logfile,message):
+
+def write_log(logfile, message):
     """Write to data log
     @param message: An array with sensors readings to be written to the data log.
     @type message: [[int, int, float, float]]
@@ -29,8 +32,8 @@ def write_log(logfile,message):
     try:
         fp = open(logfile, 'a')
         logging.getLogger().info("logging to {}".format(logfile))
-        for i in range(len(message)) :  
-            fp.write("{}, {}, {}, {}\n".format(message[i][0],message[i][1],message[i][2],message[i][3]))
+        for i in range(len(message)):
+            fp.write("{}, {}, {}, {}\n".format(message[i][0], message[i][1], message[i][2], message[i][3]))
     except IOError as e:
         raise IOError("Cannot access file {}".format(e), exc_info=True)
     except UnboundLocalError as e:

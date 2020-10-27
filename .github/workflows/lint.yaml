@@ -17,4 +17,4 @@ jobs:
         # pip install -r tests/requirements/py3.txt
     - name: Lint with flake8
       run: |
-        flake8  --fix --max-line-length=100
+        flake8 --max-line-length=120
