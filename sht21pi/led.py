@@ -14,13 +14,13 @@ import logging
 
 import _rpi_ws281x as ws
 
-_LED_CHANNEL    = 0
-_LED_COUNT      = 4         # How many LEDs to light.
-_LED_FREQ_HZ    = 800000    # Frequency of the LED signal.  Should be 800khz or 400khz.
-_LED_DMA_NUM    = 10        # DMA channel to use, can be 0-14.
-_LED_GPIO       = 18        # GPIO connected to the LED signal line.  Must support PWM!
+_LED_CHANNEL = 0
+_LED_COUNT = 4         # How many LEDs to light.
+_LED_FREQ_HZ = 800000    # Frequency of the LED signal.  Should be 800khz or 400khz.
+_LED_DMA_NUM = 10        # DMA channel to use, can be 0-14.
+_LED_GPIO = 18        # GPIO connected to the LED signal line.  Must support PWM!
 _LED_BRIGHTNESS = 63        # Set to 0 for darkest and 255 for brightest
-_LED_INVERT     = 0         # Set to 1 to invert the LED signal, good if using NPN
+_LED_INVERT = 0         # Set to 1 to invert the LED signal, good if using NPN
 _LED_COLOURS_LIST = [0x000000, 0x050000, 0x101000, 0x006463]  # Colours are GRB
 _LEDS_HUMIDITY_THRESHOLD = float(1.)
 
