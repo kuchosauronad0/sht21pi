@@ -1,0 +1,56 @@
+
+name: Python CI
+
+on:
+  # opening a pull request to main and development branch will be a trigger
+  pull_request:
+    branches:
+      - development
+      - master
+      - main
+  # any code pushed to main and development branch will also be a trigger
+  push:
+    branches:
+      - main
+      - development
+env:
+  registry: my_registry_name
+  DB_HOST: localhost
+  DB_USERNAME: postgres
+  DB_PASSWORD: postgres
+  INFLUXDB_ADMIN_USER: influxdbadmin
+  INFLUXDB_ADMIN_PASSWORD: influxdbadmin
+  INFLUXDB_USER: influxdb
+  INFLUXDB_USER_PASSWORD: influxdb
+  INFLUXDB_DB: influxdb
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      influxdb:
+        image: influxdb:latest
+        env:
+          INFLUXDB_ADMIN_USER: influxdbadmin
+          INFLUXDB_ADMIN_PASSWORD: influxdbadmin
+          INFLUXDB_USER: influxdb
+          INFLUXDB_USER_PASSWORD: influxdb
+          INFLUXDB_DB: influxdb
+        ports: ['8086:8086']
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 2.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 2.7
+          #    - name: install psycopg2 prerequisites
+          #      run: sudo apt-get install python-dev libpq-dev
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip nclib
+    - name: make init
+      run: make init
+    - name: Make install
+      run: sudo make install

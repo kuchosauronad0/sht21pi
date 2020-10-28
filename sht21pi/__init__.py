@@ -1,8 +1,1 @@
-#from .core import *
-#from .sht21pi import *
-#from .i2c import *
-#from .led import *
-import i2c
-import led
-import sht21pi
-import core
+__all__ = ["i2c", "led", "sht21pi", "core"]

@@ -11,11 +11,13 @@
 
 import sht21pi
 
+
 def main():
     try:
-       sht21pi.StorageHumidityMonitor(1).run()
+        sht21pi.StorageHumidityMonitor(1).run()
     except IOError as e:
-        raise IOError('\nCannot create connection to i2c. Ensure you have permissions for i2c, spi and check the cables.\nI.e.: sudo adduser USERNAME i2c. {}'.format(e))
+        raise IOError('\nCannot create connection to i2c. Permission denied. {}'.format(e))
+
 
 if __name__ == "__main__":
     main()
