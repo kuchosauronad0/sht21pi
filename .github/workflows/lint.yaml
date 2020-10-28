@@ -1,12 +1,17 @@
-name: Lint
+name: Lint with flake8
 
 on: [push]
 
 jobs:
-  build:
+  linting:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [2.7, 3.6, 3.7, 3.8]
+
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout repo
+      uses: actions/checkout@v1
     - name: Set up Python 2.7
       uses: actions/setup-python@v1
       with:
