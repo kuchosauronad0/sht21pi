@@ -1,16 +1,21 @@
 name: Test
 on:
+  push:
+    branches:
+      - development
   create:
 jobs:
-  release:
-    name: Release
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
+      - name: Get the sources
+        uses: actions/checkout@v1
       - name: Create a release draft for a version tag
         id: create-release-draft
-        uses: ecampidoglio/auto-release-draft@v1
+        uses: ./
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN  }}
       - name: Print the URL of the release draft
         if: steps.create-release-draft.outputs.release-url != ''
         run: echo ${{ steps.create-release-draft.outputs.release-url }}
