@@ -40,7 +40,7 @@ jobs:
         ports: ['8086:8086']
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
     - name: Set up Python 2.7
       uses: actions/setup-python@v1
       with:
